@@ -39,7 +39,7 @@ def main_login(request):
 		else:
 			print('Error')
 
-	return render(request, '../../app_account/templates/app_account/templates/app_main/login.html', context)
+	return render(request, '../templates/app_main/login.html', context)
 
 
 User = get_user_model()
@@ -56,4 +56,4 @@ def main_register(request):
 		email = register_form.cleaned_data.get("email")
 		password = register_form.cleaned_data.get("password")
 		User.objects.create_user(username=userName, email=email, password=password)
-	return render(request, '../../app_account/templates/app_account/templates/app_main/Register.html', context)
+	return render(request, '../templates/app_main/Register.html', context)

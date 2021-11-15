@@ -10,6 +10,7 @@ def show_products_page(request):
 	content = {
 		"name" : product.name,
 		"price" : product.price,
-		"distribution" : product.distribution
+		"distribution" : product.distribution,
+		"pic" : product.pic,
 	}
 	return render(request, 'app_products/products.html', content)
