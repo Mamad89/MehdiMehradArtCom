@@ -1,0 +1,14 @@
+<html lang="en">
+<head>
+	{% include 'app_main/link_head.html' %}
+	{% block css-link-for-this-page %}{% endblock %}
+</head>
+<title>{% block title %}{% endblock %}</title>
+<body>
+{% include 'app_main/preloader.html' %}
+{% include 'app_main/site_header.html' %}
+{% block content %}{% endblock %}
+{% include 'app_main/site-footer.html' %}
+{% include 'app_main/link_footer.html' %}
+</body>
+</html>
