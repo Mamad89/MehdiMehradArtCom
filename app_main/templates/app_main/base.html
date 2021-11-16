@@ -1,9 +1,8 @@
 <html lang="en">
 <head>
 	{% include 'app_main/link_head.html' %}
-	{% block css-link-for-this-page %}{% endblock %}
+	<title>{% block title %}{% endblock %}</title>
 </head>
-<title>{% block title %}{% endblock %}</title>
 <body>
 {% include 'app_main/preloader.html' %}
 {% include 'app_main/site_header.html' %}

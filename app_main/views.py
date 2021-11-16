@@ -1,12 +1,16 @@
 from django.contrib.auth import get_user_model, authenticate, login
 from django.shortcuts import render, redirect
 from .forms import ContactForm, RegisterForm, LoginForm
+from app_products.models import Product
 
 
 # Create your views here.
 
 def main_index(request):
-	return render(request, 'app_main/index.html')
+	products = Product.objects.all()
+	return render(request, 'app_main/index.html', {
+		'products': products
+	})
 
 
 def main_about(request):
@@ -56,4 +60,4 @@ def main_register(request):
 		email = register_form.cleaned_data.get("email")
 		password = register_form.cleaned_data.get("password")
 		User.objects.create_user(username=userName, email=email, password=password)
-	return render(request, '../templates/app_main/Register.html', context)
+	return render(request, '../templates/app_main/register.html', context)

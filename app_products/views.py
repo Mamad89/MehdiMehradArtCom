@@ -6,11 +6,8 @@ from .models import Product
 
 
 def show_products_page(request):
-	product = Product(request.POST or None)
+	products = Product.objects.all()
 	content = {
-		"name" : product.name,
-		"price" : product.price,
-		"distribution" : product.distribution,
-		"pic" : product.pic,
+		"products" : products
 	}
 	return render(request, 'app_products/products.html', content)
